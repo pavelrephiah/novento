@@ -1,0 +1,4 @@
+# Root-level workspaces for pnpm
+packages:
+  - "apps/*"
+  - "packages/*"
