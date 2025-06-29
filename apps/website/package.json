@@ -1,0 +1,9 @@
+{
+    "name": "@novento/website",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "build": "echo \"website: nothing to build yet\"",
+        "dev": "echo \"run Lovable first\""
+    }
+}
