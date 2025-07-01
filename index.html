@@ -21,60 +21,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <script>
-      // Immediate theme detection to prevent flash
-      (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        // Determine the actual theme that will be used
-        let actualTheme;
-        if (savedTheme === 'dark') {
-          actualTheme = 'dark';
-        } else if (savedTheme === 'light') {
-          actualTheme = 'light';
-        } else if (savedTheme === 'system' || !savedTheme) {
-          // If system theme or no theme saved, use system preference
-          actualTheme = systemPrefersDark ? 'dark' : 'light';
-        }
-        
-        // Apply the theme immediately
-        if (actualTheme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      })();
-    </script>
-    
     <style>
-      /* Prevent white flash on load - always start with light theme */
+      /* Start with light theme, theme detection will adjust if needed */
       html, body {
         background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
         margin: 0;
         padding: 0;
         min-height: 100vh;
-      }
-      
-      /* Dark mode support - only when dark class is present */
-      html.dark, html.dark body {
-        background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-      }
-      
-      /* Ensure root container has proper background immediately */
-      #root {
-        min-height: 100vh;
-        background: inherit;
-      }
-      
-      /* Prevent any flash during font loading */
-      body {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
+      
+      /* Dark mode support */
+      html.dark, html.dark body {
+        background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+      }
+      
+      #root {
+        min-height: 100vh;
+        background: inherit;
+      }
 
-      /* Immediate hero content styling */
+      /* Hero content - visible immediately */
       .instant-hero {
         min-height: 100vh;
         display: flex;
@@ -83,8 +52,6 @@
         justify-content: center;
         padding: 1.5rem;
         position: relative;
-        opacity: 1;
-        animation: fadeIn 0.7s ease-out;
       }
 
       .instant-hero-content {
@@ -146,6 +113,8 @@
         animation: bounce 2s infinite;
         cursor: pointer;
         transition: background-color 0.3s;
+        background: transparent;
+        border: none;
       }
 
       .instant-hero-arrow:hover {
@@ -172,17 +141,6 @@
 
       html.dark .instant-hero-arrow:hover svg {
         color: #d1d5db;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(48px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
 
       @keyframes bounce {
@@ -214,6 +172,28 @@
         display: none;
       }
     </style>
+    
+    <script>
+      // Immediate theme detection - runs before content is shown
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        let actualTheme;
+        if (savedTheme === 'dark') {
+          actualTheme = 'dark';
+        } else if (savedTheme === 'light') {
+          actualTheme = 'light';
+        } else {
+          // Default to system preference
+          actualTheme = systemPrefersDark ? 'dark' : 'light';
+        }
+        
+        if (actualTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
 
   <body>
