@@ -6,12 +6,8 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Ensure fonts and initial render are complete before showing animations
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 100);
-
-    return () => clearTimeout(timer);
+    // Start animation immediately
+    setIsLoaded(true);
   }, []);
 
   const scrollToNext = () => {
@@ -21,8 +17,8 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
-        isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      <div className={`text-center max-w-4xl mx-auto transition-all duration-2000 ease-out ${
+        isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
       }`}>
         <div className="mb-8">
           <img 
@@ -43,7 +39,7 @@ const Hero = () => {
       
       <button 
         onClick={scrollToNext}
-        className={`absolute bottom-12 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 group transition-all duration-300 ${
+        className={`absolute bottom-12 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 group transition-all duration-1000 delay-1000 ${
           isLoaded ? 'opacity-100 animate-bounce hover:animate-none' : 'opacity-0'
         }`}
         aria-label="Scroll to next section"
