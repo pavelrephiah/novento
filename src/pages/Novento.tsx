@@ -1,68 +1,42 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ThemeToggle from '../components/ThemeToggle';
 
 const Novento = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      <ThemeToggle />
+      
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto">
+          <Link 
+            to="/"
+            className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-12 transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+            Back to Pavel Rephiah
+          </Link>
+          
           <div className="text-center mb-16">
-            <Link 
-              to="/"
-              className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors mb-8 group"
-            >
-              <ArrowRight className="w-4 h-4 mr-2 rotate-180 group-hover:-translate-x-1 transition-transform" />
-              Back to Pavel Rephiah
-            </Link>
-            
-            <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-8">
               Novento
             </h1>
             
-            <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 leading-relaxed">
-              <p className="text-xl md:text-2xl font-light mb-8">
+            <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p>
                 This is my digital lab: where ideas take shape, code gets messy, and experiments get shipped. It's not polished. It's in motion.
               </p>
             </div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Coming Soon
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Experiments and projects are taking shape. Check back soon to see what's brewing.
+          <div className="text-center">
+            <div className="inline-block p-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700">
+              <div className="text-6xl mb-4">🚧</div>
+              <p className="text-gray-600 dark:text-gray-400 text-lg">
+                Lab experiments coming soon...
               </p>
-              <div className="w-full h-2 bg-gray-200 rounded-full">
-                <div className="w-1/3 h-2 bg-gray-400 rounded-full"></div>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                AI Tools Lab
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Building and testing AI-first tools for engineering leaders and teams.
-              </p>
-              <div className="w-full h-2 bg-gray-200 rounded-full">
-                <div className="w-2/3 h-2 bg-gray-600 rounded-full"></div>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Leadership Notes
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Lessons learned, patterns observed, and frameworks tested in the field.
-              </p>
-              <div className="w-full h-2 bg-gray-200 rounded-full">
-                <div className="w-1/4 h-2 bg-gray-300 rounded-full"></div>
-              </div>
             </div>
           </div>
         </div>

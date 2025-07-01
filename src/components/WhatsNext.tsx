@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 const WhatsNext = () => {
   return (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12">
           What's Next?
         </h2>
         
-        <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 leading-relaxed mb-12">
+        <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
           <p className="mb-6">
             I've led at scale. Now I'm building at the edge, exploring what it means to lead in a world shaped by AI, speed, and new ways of working.
           </p>
@@ -22,7 +22,7 @@ const WhatsNext = () => {
         
         <Link 
           to="/novento"
-          className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+          className="inline-flex items-center px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
         >
           Enter Novento
           <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

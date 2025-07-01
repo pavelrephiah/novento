@@ -6,6 +6,7 @@ import About from '../components/About';
 import Principles from '../components/Principles';
 import WhatsNext from '../components/WhatsNext';
 import Connect from '../components/Connect';
+import ThemeToggle from '../components/ThemeToggle';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -17,7 +18,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      <ThemeToggle />
       <Hero />
       <About />
       <Principles />
