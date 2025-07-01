@@ -25,10 +25,21 @@
       // Immediate theme detection to prevent flash
       (function() {
         const savedTheme = localStorage.getItem('theme');
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const theme = savedTheme || systemTheme;
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
-        if (theme === 'dark') {
+        // Determine the actual theme that will be used
+        let actualTheme;
+        if (savedTheme === 'dark') {
+          actualTheme = 'dark';
+        } else if (savedTheme === 'light') {
+          actualTheme = 'light';
+        } else if (savedTheme === 'system' || !savedTheme) {
+          // If system theme or no theme saved, use system preference
+          actualTheme = systemPrefersDark ? 'dark' : 'light';
+        }
+        
+        // Apply the theme immediately
+        if (actualTheme === 'dark') {
           document.documentElement.classList.add('dark');
         } else {
           document.documentElement.classList.remove('dark');
