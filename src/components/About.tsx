@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <section id="about" className="py-20 px-6">
       <div className="max-w-4xl mx-auto animate-fade-in-up">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">
           My Story
@@ -11,11 +11,11 @@ const About = () => {
         
         <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-6">
           <p>
-            For over two decades, I helped build SeatGeek into one of the most trusted and scalable ticketing platforms in the world. As a senior engineering leader, I shaped teams, scaled systems, and grew people. I applied what I learned to deliver with speed, stability, and quality, and to lead with clarity, even in complexity.
+            For over two decades, I helped build Toptix and then SeatGeek into one of the most trusted and scalable ticketing platforms in the world. As a senior engineering leader, I shaped teams, scaled systems, and grew people. I applied what I learned to deliver with speed, stability, and quality, and to lead with clarity, even in complexity.
           </p>
           
           <p>
-            After 22 years, that chapter came to a close. The world was shifting: technology, leadership, and the role of AI were all accelerating. And I knew it was time to step forward again, not just to keep up, but to be ahead of it.
+            That chapter came to a close. The world was shifting: technology, leadership, and the role of AI were all accelerating. And I knew it was time to step forward again, not just to keep up, but to be ahead of it.
           </p>
           
           <p>

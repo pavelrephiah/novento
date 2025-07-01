@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const WhatsNext = () => {
   return (
-    <section className="py-20 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12">
           What's Next?

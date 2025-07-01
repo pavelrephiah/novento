@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
       <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
         <div className="mb-8">
           <img 
@@ -19,7 +19,7 @@ const Hero = () => {
           />
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
           Pavel Rephiah
         </h1>
         
