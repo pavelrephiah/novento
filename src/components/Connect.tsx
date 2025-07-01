@@ -12,14 +12,14 @@ const Connect = () => {
         
         <div className="mb-12">
           <a 
-            href="mailto:pavel@novento.ai"
+            href="mailto:pavel@novento.io"
             className="text-2xl md:text-3xl font-light hover:text-gray-300 transition-colors underline decoration-2 underline-offset-4"
           >
-            pavel@novento.ai
+            pavel@novento.io
           </a>
         </div>
         
-        <div className="flex justify-center space-x-8">
+        <div className="flex justify-center space-x-8 mb-12">
           <a 
             href="https://www.linkedin.com/in/pavel-rephiah/"
             target="_blank"
@@ -39,6 +39,10 @@ const Connect = () => {
           >
             <Github className="w-8 h-8" />
           </a>
+        </div>
+        
+        <div className="text-xs text-gray-400">
+          © 2025 Novento
         </div>
       </div>
     </section>

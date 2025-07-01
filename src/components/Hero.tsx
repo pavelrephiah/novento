@@ -10,7 +10,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
+      <div className="text-center max-w-4xl mx-auto animate-fade-in-slow">
         <div className="mb-8">
           <img 
             src="/placeholder.svg" 
