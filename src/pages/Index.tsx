@@ -16,10 +16,10 @@ const Index = () => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     
-    // Remove initial load state after a brief delay to ensure smooth rendering
+    // Reduce delay to minimize any visible transition
     const timer = setTimeout(() => {
       setIsInitialLoad(false);
-    }, 150);
+    }, 50);
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -28,7 +28,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-all duration-500 ${
+    <div className={`min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-all duration-300 ${
       isInitialLoad ? 'opacity-0' : 'opacity-100'
     }`}>
       <ThemeToggle />
