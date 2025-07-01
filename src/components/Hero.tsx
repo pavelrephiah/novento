@@ -6,6 +6,12 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // Hide the instant hero and show React version
+    const instantHero = document.querySelector('.instant-hero') as HTMLElement;
+    if (instantHero) {
+      instantHero.style.display = 'none';
+    }
+    
     // Trigger animation immediately after component mounts
     setIsLoaded(true);
   }, []);
