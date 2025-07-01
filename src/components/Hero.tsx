@@ -1,14 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Start animation immediately
-    setIsLoaded(true);
-  }, []);
+  const [isLoaded, setIsLoaded] = useState(true); // Start as true for immediate visibility
 
   const scrollToNext = () => {
     const nextSection = document.getElementById('about');
