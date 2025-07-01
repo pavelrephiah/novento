@@ -8,57 +8,57 @@ const principlesData = [
   {
     principle: "Build clarity before you build anything else.",
     quote: "Complexity is inevitable, but confusion is optional.",
-    gradient: "from-blue-500 to-purple-600"
+    gradient: "from-blue-500 to-blue-600"
   },
   {
     principle: "Leadership is not authority. It's responsibility.",
     quote: "Trust is earned through consistent action, not granted through title.",
-    gradient: "from-purple-500 to-pink-600"
+    gradient: "from-purple-500 to-purple-600"
   },
   {
     principle: "Accountability builds trust.",
     quote: "Say what you'll do. Do what you said.",
-    gradient: "from-pink-500 to-rose-600"
+    gradient: "from-indigo-500 to-indigo-600"
   },
   {
     principle: "Small steps. Fast feedback.",
     quote: "Progress compounds when it loops.",
-    gradient: "from-rose-500 to-orange-600"
+    gradient: "from-slate-500 to-slate-600"
   },
   {
     principle: "Agility is a mindset, not a process.",
     quote: "Adapt quickly, decide clearly, recover confidently.",
-    gradient: "from-orange-500 to-yellow-600"
+    gradient: "from-teal-500 to-teal-600"
   },
   {
     principle: "Continuous improvement beats delayed perfection.",
     quote: "Ship. Learn. Refactor. Repeat.",
-    gradient: "from-yellow-500 to-green-600"
+    gradient: "from-cyan-500 to-cyan-600"
   },
   {
     principle: "Good systems scale. Good people grow.",
     quote: "Invest in both.",
-    gradient: "from-green-500 to-emerald-600"
+    gradient: "from-emerald-500 to-emerald-600"
   },
   {
     principle: "Take care of people, product, and profit: in that order.",
     quote: "(Ben Horowitz)",
-    gradient: "from-emerald-500 to-teal-600"
+    gradient: "from-gray-500 to-gray-600"
   },
   {
     principle: "Think in bets. Move with intent.",
     quote: "Perfect is slow. Progress is power.",
-    gradient: "from-teal-500 to-cyan-600"
+    gradient: "from-blue-600 to-purple-600"
   },
   {
     principle: "AI is not just a tool, it's a lens.",
     quote: "The way we think, build, and lead is being rewritten. Start learning now.",
-    gradient: "from-cyan-500 to-blue-600"
+    gradient: "from-violet-500 to-violet-600"
   },
   {
     principle: "Stay curious. Stay useful.",
     quote: "The best ideas come from people who are still learning and still shipping.",
-    gradient: "from-indigo-500 to-purple-600"
+    gradient: "from-indigo-600 to-purple-600"
   }
 ];
 
@@ -145,7 +145,7 @@ const Principles = () => {
                     <div 
                       className={`
                         relative h-full bg-gradient-to-br ${item.gradient} 
-                        rounded-2xl p-8 shadow-xl hover:shadow-2xl
+                        rounded-2xl p-6 shadow-xl hover:shadow-2xl
                         transform transition-all duration-500 hover:scale-105
                         border border-white/20 dark:border-gray-700/50
                         backdrop-blur-sm
@@ -153,7 +153,7 @@ const Principles = () => {
                       `}
                       style={{ 
                         animationDelay: `${index * 0.1}s`,
-                        minHeight: '280px'
+                        minHeight: '140px'
                       }}
                     >
                       {/* Gradient Overlay */}
@@ -164,10 +164,10 @@ const Principles = () => {
                       
                       {/* Content */}
                       <div className="relative z-10 flex flex-col h-full">
-                        <h3 className="text-lg font-semibold text-white mb-6 leading-tight">
+                        <h3 className="text-base font-semibold text-white mb-3 leading-tight">
                           {item.principle}
                         </h3>
-                        <p className="text-white/90 italic text-base leading-relaxed mt-auto">
+                        <p className="text-white/90 italic text-sm leading-relaxed mt-auto">
                           {item.quote}
                         </p>
                       </div>
