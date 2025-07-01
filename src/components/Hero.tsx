@@ -1,8 +1,19 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Ensure fonts and initial render are complete before showing animations
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToNext = () => {
     const nextSection = document.getElementById('about');
     nextSection?.scrollIntoView({ behavior: 'smooth' });
@@ -10,7 +21,9 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      <div className="text-center max-w-4xl mx-auto animate-fade-in-slow">
+      <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
+        isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="mb-8">
           <img 
             src="/placeholder.svg" 
@@ -30,7 +43,9 @@ const Hero = () => {
       
       <button 
         onClick={scrollToNext}
-        className="absolute bottom-12 animate-bounce hover:animate-none transition-all duration-300 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 group"
+        className={`absolute bottom-12 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 group transition-all duration-300 ${
+          isLoaded ? 'opacity-100 animate-bounce hover:animate-none' : 'opacity-0'
+        }`}
         aria-label="Scroll to next section"
       >
         <ArrowDown className="w-6 h-6 text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />

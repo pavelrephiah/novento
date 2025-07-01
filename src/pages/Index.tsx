@@ -10,15 +10,27 @@ import ThemeToggle from '../components/ThemeToggle';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Prevent flash of unstyled content
+    const timer = setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 50);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className={`min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 ${
+      isInitialLoad ? 'opacity-0' : 'opacity-100'
+    }`}>
       <ThemeToggle />
       <Hero />
       <About />
