@@ -20,6 +20,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Prevent white flash on load */
+      body {
+        background: linear-gradient(to bottom right, #f8fafc, #ffffff);
+        margin: 0;
+        padding: 0;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: linear-gradient(to bottom right, #111827, #1f2937);
+        }
+      }
+      
+      .dark body {
+        background: linear-gradient(to bottom right, #111827, #1f2937);
+      }
+    </style>
   </head>
 
   <body>
