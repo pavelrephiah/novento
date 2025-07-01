@@ -1,8 +1,14 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(true); // Start as true for immediate visibility
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation immediately after component mounts
+    setIsLoaded(true);
+  }, []);
 
   const scrollToNext = () => {
     const nextSection = document.getElementById('about');
@@ -11,7 +17,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 ease-out ${
+      <div className={`text-center max-w-4xl mx-auto transition-all duration-700 ease-out ${
         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
       }`}>
         <div className="mb-8">
@@ -33,7 +39,7 @@ const Hero = () => {
       
       <button 
         onClick={scrollToNext}
-        className={`absolute bottom-12 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 group transition-all duration-1000 delay-500 ${
+        className={`absolute bottom-12 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 group transition-all duration-700 delay-300 ${
           isLoaded ? 'opacity-100 animate-bounce hover:animate-none' : 'opacity-0'
         }`}
         aria-label="Scroll to next section"
