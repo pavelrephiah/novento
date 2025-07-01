@@ -50,28 +50,29 @@ const principlesData = [
 
 const Principles = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Principles
           </h2>
-          <p className="text-xl text-gray-600 italic">
-            "These principles guide what I do and how I do it."
+          <p className="text-xl text-gray-600 dark:text-gray-300 italic">
+            These principles guide what I do and how I do it.
           </p>
         </div>
         
         <div className="overflow-x-auto pb-6">
-          <div className="flex space-x-6 w-max">
+          <div className="flex space-x-6 w-max animate-fade-in-delayed">
             {principlesData.map((item, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-80 flex-shrink-0 border border-gray-100"
+                className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/20 transform hover:scale-105 transition-all duration-300 w-80 flex-shrink-0 border border-gray-100 dark:border-gray-700"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 leading-tight">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
                   {item.principle}
                 </h3>
-                <p className="text-gray-600 italic text-base leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 italic text-base leading-relaxed">
                   {item.quote}
                 </p>
               </div>
@@ -80,7 +81,7 @@ const Principles = () => {
         </div>
         
         <div className="text-center mt-8">
-          <p className="text-sm text-gray-500">← Scroll horizontally to explore →</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">← Scroll horizontally to explore →</p>
         </div>
       </div>
     </section>

@@ -9,8 +9,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      <div className="text-center max-w-4xl mx-auto animate-fade-in">
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
         <div className="mb-8">
           <img 
             src="/placeholder.svg" 
@@ -19,12 +19,12 @@ const Hero = () => {
           />
         </div>
         
-        <h1 className="text-6xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
           Pavel Rephiah
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light italic mb-12 max-w-2xl mx-auto">
-          "Engineering leader. Builder. Ready for what's next."
+          Engineering leader. Builder. Ready for what's next.
         </p>
       </div>
       
