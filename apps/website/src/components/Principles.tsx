@@ -1,5 +1,6 @@
+"use client";
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import type { CarouselApi } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
@@ -69,7 +70,7 @@ const Principles = () => {
   const [progress, setProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  const autoplay = React.useRef(
+  const autoplay = useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true })
   );
 
@@ -108,10 +109,6 @@ const Principles = () => {
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-blue-50/30 dark:from-gray-900/50 dark:to-blue-900/20"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-      
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -122,7 +119,7 @@ const Principles = () => {
           </p>
         </div>
 
-        <div 
+        <div
           className="relative"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -142,7 +139,7 @@ const Principles = () => {
               {principlesData.map((item, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="h-full p-1">
-                    <div 
+                    <div
                       className={`
                         relative h-full bg-gradient-to-br ${item.gradient} 
                         rounded-2xl p-6 shadow-xl hover:shadow-2xl
@@ -151,17 +148,17 @@ const Principles = () => {
                         backdrop-blur-sm
                         group cursor-pointer
                       `}
-                      style={{ 
+                      style={{
                         animationDelay: `${index * 0.1}s`,
                         minHeight: '140px'
                       }}
                     >
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
-                      
+
                       {/* Glow Effect */}
                       <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-transparent rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
+
                       {/* Content */}
                       <div className="relative z-10 flex flex-col h-full">
                         <h3 className="text-base font-semibold text-white mb-3 leading-tight">
@@ -171,7 +168,7 @@ const Principles = () => {
                           {item.quote}
                         </p>
                       </div>
-                      
+
                       {/* Shine Effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000 rounded-2xl"></div>
                     </div>
@@ -179,7 +176,7 @@ const Principles = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
+
             <CarouselPrevious className="hidden md:flex -left-16 h-12 w-12 border-2 hover:scale-110 transition-all duration-300 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg" />
             <CarouselNext className="hidden md:flex -right-16 h-12 w-12 border-2 hover:scale-110 transition-all duration-300 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg" />
           </Carousel>
@@ -187,7 +184,7 @@ const Principles = () => {
           {/* Progress Bar */}
           <div className="mt-8 mx-auto max-w-md">
             <div className="h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-              <div 
+              <div
                 className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${progress}%` }}
               ></div>
@@ -202,8 +199,8 @@ const Principles = () => {
                 onClick={() => scrollTo(index)}
                 className={`
                   w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125
-                  ${index === current - 1 
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg' 
+                  ${index === current - 1
+                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg'
                     : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                   }
                 `}

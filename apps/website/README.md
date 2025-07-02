@@ -1,73 +1,132 @@
-# Welcome to your Lovable project
+# Pavel Rephiah - Website
 
-## Project info
+A Next.js 15 application built with TypeScript, Tailwind CSS, and shadcn/ui components.
 
-**URL**: https://lovable.dev/projects/c130972f-b16f-4c97-bd7c-d30f80caea3f
+## Tech Stack
 
-## How can I edit this code?
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **State Management**: TanStack Query
+- **Theme**: next-themes
+- **Icons**: Lucide React
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/c130972f-b16f-4c97-bd7c-d30f80caea3f) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── globals.css     # Global styles and design system
+│   ├── layout.tsx      # Root layout with providers
+│   ├── page.tsx        # Home page
+│   ├── providers.tsx   # Client-side providers (QueryClient)
+│   ├── novento/        # Novento page route
+│   └── not-found.tsx   # 404 page
+├── components/         # Reusable components
+│   ├── ui/            # shadcn/ui components
+│   ├── Hero.tsx       # Landing page sections
+│   ├── About.tsx
+│   ├── Principles.tsx
+│   ├── WhatsNext.tsx
+│   ├── Connect.tsx
+│   ├── ThemeProvider.tsx
+│   └── ThemeToggle.tsx
+├── hooks/             # Custom React hooks
+├── lib/               # Utility functions
+└── public/            # Static assets
 ```
 
-**Edit a file directly in GitHub**
+## Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- Node.js 18+ 
+- pnpm (as this is part of a pnpm workspace)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Installation
 
-## What technologies are used for this project?
+```bash
+# Install dependencies (from the monorepo root)
+pnpm install
 
-This project is built with:
+# Or from this directory
+pnpm install
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Development
 
-## How can I deploy this project?
+```bash
+# Start development server
+pnpm dev
 
-Simply open [Lovable](https://lovable.dev/projects/c130972f-b16f-4c97-bd7c-d30f80caea3f) and click on Share -> Publish.
+# The app will be available at http://localhost:3000
+```
 
-## Can I connect a custom domain to my Lovable project?
+### Building
 
-Yes, you can!
+```bash
+# Build for production
+pnpm build
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Start production server
+pnpm start
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Linting
+
+```bash
+# Run ESLint
+pnpm lint
+```
+
+## Features
+
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Dark Mode**: System/manual theme switching with next-themes
+- **Modern UI**: shadcn/ui components with consistent design system
+- **Server Components**: Leverages Next.js 15 App Router for optimal performance
+- **TypeScript**: Full type safety throughout the application
+- **SEO Friendly**: Proper meta tags and semantic HTML
+
+## Routes
+
+- `/` - Home page (Pavel Rephiah profile)
+- `/novento` - Novento digital lab page
+- `*` - 404 Not Found page
+
+## Deployment
+
+This application is optimized for deployment on Vercel:
+
+1. Connect your repository to Vercel
+2. Set the root directory to `apps/website`
+3. Vercel will automatically detect the Next.js configuration
+4. Deploy!
+
+The build output is compatible with any Node.js hosting platform that supports Next.js.
+
+## Design System
+
+The application uses a comprehensive design system defined in `src/app/globals.css`:
+
+- **CSS Variables**: HSL-based color system for consistent theming
+- **Custom Animations**: Fade-in effects and micro-interactions
+- **Responsive Breakpoints**: Mobile-first responsive design
+- **Dark Mode**: Automatic system theme detection with manual override
+
+## Development Notes
+
+- All components requiring client-side interactivity are marked with `"use client"`
+- Server components are used by default for optimal performance
+- The app uses Next.js 15's latest features including improved App Router
+- shadcn/ui components are configured for React Server Components (RSC)
+
+## Migration Notes
+
+This project was migrated from Vite + React Router to Next.js 15:
+
+- React Router navigation replaced with Next.js `<Link>` and App Router
+- Vite build system replaced with Next.js built-in bundling
+- Client/server component architecture implemented
+- All routing converted to file-based App Router structure
