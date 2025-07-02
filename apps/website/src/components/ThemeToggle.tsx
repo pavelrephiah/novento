@@ -1,10 +1,16 @@
+"use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Sun, Moon, Monitor } from 'lucide-react';
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -17,6 +23,7 @@ const ThemeToggle = () => {
   };
 
   const getIcon = () => {
+    if (!mounted) return <Monitor className="w-5 h-5" />;
     switch (theme) {
       case 'light':
         return <Sun className="w-5 h-5" />;
