@@ -11,3 +11,7 @@ node_modules/
 
 # Logs
 *.log
+
+# Next.js build output
+.next/
+apps/website/.next/
