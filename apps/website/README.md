@@ -1,132 +1,123 @@
-# Pavel Rephiah - Website
+# Novento Website (`apps/website`)
 
-A Next.js 15 application built with TypeScript, Tailwind CSS, and shadcn/ui components.
+**Landing for [novento.io](https://novento.io)** — personal homepage of **Pavel Rephiah** and a hub showcasing his portfolio & pet‑projects. Built with **Next.js 15**, Tailwind CSS, and shadcn/ui, deployed from a pnpm + Turborepo monorepo to Vercel.
 
-## Tech Stack
+---
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
-- **State Management**: TanStack Query
-- **Theme**: next-themes
-- **Icons**: Lucide React
+## 🛠 Tech Stack
 
-## Project Structure
+* **Framework**  Next.js 15 (App Router, React Server Components)
+* **Language**  TypeScript
+* **Styling**  Tailwind CSS
+* **UI Components**  shadcn/ui (+ custom wrappers)
+* **State / Data**  TanStack Query
+* **Theming**  next‑themes (dark / light)
+* **Icons**  Lucide React
+* **Animations**  Framer Motion (lightweight)
+* **Tooling**  pnpm · Turborepo · ESLint · Prettier · Vitest / Playwright (planned)
 
+---
+
+## 🗂 Project Structure
+
+```text
+apps/website
+├── src/
+│   ├── app/             # Next.js App Router
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── globals.css
+│   │   ├── novento/     # /novento route
+│   │   └── not-found.tsx
+│   ├── components/
+│   │   ├── ui/          # shadcn/ui components
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Principles.tsx
+│   │   ├── WhatsNext.tsx
+│   │   ├── Connect.tsx
+│   │   └── ThemeToggle.tsx
+│   ├── hooks/
+│   ├── lib/
+│   └── public/
 ```
-src/
-├── app/                 # Next.js App Router
-│   ├── globals.css     # Global styles and design system
-│   ├── layout.tsx      # Root layout with providers
-│   ├── page.tsx        # Home page
-│   ├── providers.tsx   # Client-side providers (QueryClient)
-│   ├── novento/        # Novento page route
-│   └── not-found.tsx   # 404 page
-├── components/         # Reusable components
-│   ├── ui/            # shadcn/ui components
-│   ├── Hero.tsx       # Landing page sections
-│   ├── About.tsx
-│   ├── Principles.tsx
-│   ├── WhatsNext.tsx
-│   ├── Connect.tsx
-│   ├── ThemeProvider.tsx
-│   └── ThemeToggle.tsx
-├── hooks/             # Custom React hooks
-├── lib/               # Utility functions
-└── public/            # Static assets
-```
 
-## Getting Started
+---
 
-### Prerequisites
+## ✨ Key Features
 
-- Node.js 18+ 
-- pnpm (as this is part of a pnpm workspace)
+* **Responsive split‑panel layout** on desktop, stacked on mobile.
+* **Dark / Light mode** with system preference & manual toggle.
+* **Type‑safe** end‑to‑end using strict TypeScript.
+* **Server + Client Components** for optimal performance.
+* **SEO‑ready**: dynamic meta + upcoming OG image generation.
+* **Zero‑config CI/CD** via Vercel & Turborepo caching.
 
-### Installation
+---
+
+## ⚙️ Local Development
+
+From the **monorepo root**
 
 ```bash
-# Install dependencies (from the monorepo root)
-pnpm install
-
-# Or from this directory
-pnpm install
+pnpm install                       # one lock‑file for all packages
+pnpm dev --filter=@novento/website # http://localhost:3000
 ```
 
-### Development
+From the **app directory** (`apps/website`)
 
 ```bash
-# Start development server
+pnpm install  # optional; uses same lock‑file
 pnpm dev
-
-# The app will be available at http://localhost:3000
 ```
 
-### Building
+Production‑style build & start
 
 ```bash
-# Build for production
-pnpm build
-
-# Start production server
-pnpm start
+pnpm build --filter=@novento/website
+pnpm start --filter=@novento/website
 ```
 
-### Linting
+Lint
 
 ```bash
-# Run ESLint
-pnpm lint
+pnpm lint --filter=@novento/website
 ```
 
-## Features
+---
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Dark Mode**: System/manual theme switching with next-themes
-- **Modern UI**: shadcn/ui components with consistent design system
-- **Server Components**: Leverages Next.js 15 App Router for optimal performance
-- **TypeScript**: Full type safety throughout the application
-- **SEO Friendly**: Proper meta tags and semantic HTML
+## 🌍 Routes
 
-## Routes
+| Path       | Purpose                  |
+| ---------- | ------------------------ |
+| `/`        | Home (about Pavel)       |
+| `/novento` | Novento digital lab page |
+| `*`        | Custom 404               |
 
-- `/` - Home page (Pavel Rephiah profile)
-- `/novento` - Novento digital lab page
-- `*` - 404 Not Found page
+---
 
-## Deployment
+## 🚀 Deployment (Vercel – Monorepo Pattern)
 
-This application is optimized for deployment on Vercel:
+| Setting          | Value                                     |
+| ---------------- | ----------------------------------------- |
+| Root Directory   | *(blank — repo root)*                     |
+| Build Command    | `pnpm build --filter=@novento/website...` |
+| Output Directory | `apps/website/.next`                      |
+| Node Version     | 18.x                                      |
 
-1. Connect your repository to Vercel
-2. Set the root directory to `apps/website`
-3. Vercel will automatically detect the Next.js configuration
-4. Deploy!
+Domain **novento.io** is attached to the **novento** Vercel project. Merges to `main` auto‑deploy.
 
-The build output is compatible with any Node.js hosting platform that supports Next.js.
+---
 
-## Design System
+## 🛣 Roadmap
 
-The application uses a comprehensive design system defined in `src/app/globals.css`:
+1. **Facelift v1.1** — adopt split‑panel + smooth section scroll / active link.
+2. OG image generation with Satori / Vercel OG.
+3. Dark‑mode persistence via cookies.
+4. Playwright smoke suite in CI.
 
-- **CSS Variables**: HSL-based color system for consistent theming
-- **Custom Animations**: Fade-in effects and micro-interactions
-- **Responsive Breakpoints**: Mobile-first responsive design
-- **Dark Mode**: Automatic system theme detection with manual override
+---
 
-## Development Notes
+## 🔖 License
 
-- All components requiring client-side interactivity are marked with `"use client"`
-- Server components are used by default for optimal performance
-- The app uses Next.js 15's latest features including improved App Router
-- shadcn/ui components are configured for React Server Components (RSC)
-
-## Migration Notes
-
-This project was migrated from Vite + React Router to Next.js 15:
-
-- React Router navigation replaced with Next.js `<Link>` and App Router
-- Vite build system replaced with Next.js built-in bundling
-- Client/server component architecture implemented
-- All routing converted to file-based App Router structure
+MIT © Pavel Rephiah 2025
