@@ -1,8 +1,34 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const WhatsNext = () => {
+  const [staggerKey, setStaggerKey] = useState(0); // for looping
+  const text = 'Welcome to Novento.';
+  const words = text.split(' ');
+
+  // Animation variants
+  const wordStagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+  const wordVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100 } },
+  };
+
+  // Loop the staggered animation
+  useEffect(() => {
+    const totalDuration = 0.15 * words.length + 1; // stagger + a little buffer
+    const timer = setTimeout(() => {
+      setStaggerKey((k) => k + 1);
+    }, totalDuration * 1000 + 3000); // animation duration + 3s pause
+    return () => clearTimeout(timer);
+  }, [staggerKey, words.length]);
+
   return (
     <section className="pb-20 px-6">
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">
@@ -10,22 +36,44 @@ const WhatsNext = () => {
       </h2>
       <div className="max-w-4xl mx-auto animate-fade-in-up">
         <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
+          <p className="mb-8 flex justify-center items-center min-h-[3.5rem]">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={staggerKey}
+                className="font-bold text-2xl text-blue-700 dark:text-cyan-400 block text-center"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={wordStagger}
+                style={{ display: 'inline-block' }}
+              >
+                {words.map((word, i) => (
+                  <motion.span
+                    key={word + i}
+                    variants={wordVariant}
+                    style={{ display: 'inline-block', marginRight: '0.25em' }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.span>
+            </AnimatePresence>
+          </p>
           <p className="mb-6">
-            I&apos;ve led at scale. Now I&apos;m building at the edge, exploring what it means to lead in a world shaped by AI, speed, and new ways of working.
+            My digital lab where ideas take shape, code gets messy, and experiments get shipped. It&apos;s not polished. It&apos;s in motion.
           </p>
           <p>
-            <span className="font-bold">Welcome to Novento.</span> My personal lab for experiments, side projects, tiny products, and lessons that will shape my next epic.
+            Here I build side projects, ship tiny products, and capture lessons that will shape my next epic. This is where I explore how AI transforms the way we think, build, and lead—accelerating my leadership for what&apos;s coming next.
           </p>
         </div>
 
-        <div className="flex justify-center">
-          <Link
-            href="/novento"
-            className="inline-flex items-center px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
-          >
-            Enter Novento
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+        <div className="text-center mt-16">
+          <div className="inline-block p-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 animate-fade-in">
+            <div className="text-6xl mb-4">🚧</div>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
+              Lab experiments coming soon...
+            </p>
+          </div>
         </div>
       </div>
     </section>

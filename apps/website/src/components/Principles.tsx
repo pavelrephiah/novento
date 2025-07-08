@@ -109,24 +109,26 @@ const Principles = () => {
 
   return (
     <section className="pb-20 px-6 relative overflow-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center">
         Principles
       </h2>
-      <div className="max-w-7xl mx-auto relative">
+      <p className="text-xl text-gray-600 dark:text-gray-300 italic mb-8 text-center">
+        These principles guide what I do and how I do it.
+      </p>
+      <div className="w-full max-w-screen-xl mx-auto relative">
         <div className="text-center mb-16 animate-fade-in">
           {/* rest of content, no heading here */}
         </div>
-
         <div
-          className="relative"
+          className="relative overflow-visible px-16"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
           <Carousel
             setApi={setApi}
-            className="w-full max-w-6xl mx-auto"
+            className="w-full max-w-screen-xl mx-auto overflow-visible"
             opts={{
-              align: "center",
+              align: "start",
               loop: true,
               skipSnaps: false,
               dragFree: false,
@@ -135,7 +137,7 @@ const Principles = () => {
           >
             <CarouselContent className="-ml-4">
               {principlesData.map((item, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="pl-4 min-w-[380px] md:basis-1/2 lg:basis-1/3">
                   <div className="h-full p-1">
                     <div
                       className={`
@@ -175,8 +177,8 @@ const Principles = () => {
               ))}
             </CarouselContent>
 
-            <CarouselPrevious className="hidden md:flex -left-16 h-12 w-12 border-2 hover:scale-110 transition-all duration-300 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg" />
-            <CarouselNext className="hidden md:flex -right-16 h-12 w-12 border-2 hover:scale-110 transition-all duration-300 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg" />
+            <CarouselPrevious className="flex absolute -left-8 top-1/2 -translate-y-1/2 z-10 h-12 w-12 border-2 hover:scale-110 transition-all duration-300 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg" />
+            <CarouselNext className="flex absolute -right-8 top-1/2 -translate-y-1/2 z-10 h-12 w-12 border-2 hover:scale-110 transition-all duration-300 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg" />
           </Carousel>
 
           {/* Progress Bar */}

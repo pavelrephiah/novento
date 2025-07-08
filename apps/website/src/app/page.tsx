@@ -32,6 +32,10 @@ export default function HomePage() {
                     current = id;
                 }
             }
+            // If at the bottom of the page, set last section as active
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+                current = sectionIds[sectionIds.length - 1];
+            }
             setActiveSection(current);
         };
         window.addEventListener('scroll', handleScroll);
@@ -76,13 +80,15 @@ export default function HomePage() {
                 <main ref={mainContentRef} className="flex-1 md:ml-[288px] w-full flex flex-col items-center">
                     <div className="w-full max-w-2xl px-4 md:px-8">
                         <ThemeToggle />
-                        <section id="my-story" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12">
+                        <section id="my-story" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12 min-h-screen md:min-h-[calc(100vh-64px)]">
                             <About />
                         </section>
-                        <section id="principles" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12">
-                            <Principles />
+                        <section id="principles" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12 min-h-screen md:min-h-[calc(100vh-64px)]">
+                            <div className="relative -mx-4 md:-mx-8 lg:-mx-[calc((100vw-288px-100%)/2)]">
+                                <Principles />
+                            </div>
                         </section>
-                        <section id="whats-next" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12">
+                        <section id="whats-next" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12 min-h-screen md:min-h-[calc(100vh-64px)]">
                             <WhatsNext />
                         </section>
                         <section id="connect" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12">

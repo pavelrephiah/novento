@@ -1,5 +1,5 @@
 import NextImage from 'next/image';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const navItems = [
@@ -72,6 +72,13 @@ export default function LeftPanel() {
                     </ul>
                 </nav>
                 <div className="flex gap-4 mt-2 justify-center w-full">
+                    <a
+                        href="mailto:pavel@novento.io"
+                        className="p-2 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition-colors"
+                        aria-label="Email Pavel"
+                    >
+                        <Mail className="w-5 h-5 text-sky-500" />
+                    </a>
                     <a
                         href="https://www.linkedin.com/in/pavel-rephiah/"
                         target="_blank"
