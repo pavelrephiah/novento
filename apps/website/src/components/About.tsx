@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About = () => {
@@ -22,7 +21,7 @@ const About = () => {
             I&apos;m not changing careers. I&apos;m evolving as a leader who thinks and operates AI-first. To do that, I&apos;ve gone back to the building blocks: writing code, experimenting with tools, shipping small products, and getting my hands in the loop. This is how I accelerate my leadership for what&apos;s coming next.
           </p>
 
-          <p className="text-xl font-medium text-gray-900 dark:text-white pt-4">
+          <p className="text-xl font-medium text-gray-900 dark:text-white pt-4 mb-0">
             This site is the beginning of that journey.
           </p>
         </div>
