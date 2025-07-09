@@ -15,3 +15,5 @@ node_modules/
 # Next.js build output
 .next/
 apps/website/.next/
+# Reference or temporary merge folders
+TempMerging/

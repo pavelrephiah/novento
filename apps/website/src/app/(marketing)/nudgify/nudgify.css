@@ -1,0 +1,119 @@
+/* Nudgify-specific styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.nudgify-root {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.nudgify-btn-hero,
+.nudgify-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.125rem;
+    /* text-lg */
+    font-weight: 600;
+    line-height: 1.75rem;
+    height: 3.5rem;
+    /* h-14 */
+    padding-left: 2.5rem;
+    /* px-10 */
+    padding-right: 2.5rem;
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.nudgify-btn-hero {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    color: #fff;
+    box-shadow: var(--shadow-button);
+    border: none;
+    font-weight: 600;
+    font-family: 'Inter', system-ui, sans-serif;
+    transform: scale(1);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.nudgify-btn-hero:hover {
+    filter: none;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-soft);
+}
+
+.nudgify-btn-outline {
+    background: #fff;
+    color: hsl(var(--foreground));
+    border: 1.5px solid hsl(var(--border));
+}
+
+.nudgify-btn-outline:hover {
+    background: hsl(var(--muted));
+}
+
+.nudgify-btn-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    height: 3.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 0.75rem;
+    background: #fff !important;
+    color: #18181b !important;
+    border: 1.5px solid hsl(var(--border)) !important;
+    box-shadow: none !important;
+    /* Reset Tailwind background/border/box-shadow */
+    background-image: none !important;
+    border-width: 1.5px !important;
+    border-style: solid !important;
+    border-color: hsl(var(--border)) !important;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.nudgify-btn-dark:hover {
+    background: hsl(var(--accent)) !important;
+    color: hsl(var(--accent-foreground)) !important;
+    border-color: hsl(var(--accent)) !important;
+}
+
+.nudgify-header {
+    background: hsl(var(--background) / 0.8) !important;
+    border-bottom: 1.5px solid hsl(var(--border)) !important;
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nudgify-header-btn {
+    height: 2.25rem;
+    /* h-9 */
+    padding-left: 1.5rem;
+    /* px-6 */
+    padding-right: 1.5rem;
+    font-size: 1rem;
+    /* text-base */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    font-weight: 600;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.nudgify-header-toggle {
+    margin-right: 0.75rem;
+    /* space-x-3 */
+    position: static;
+    vertical-align: middle;
+}

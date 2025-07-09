@@ -66,13 +66,33 @@ const WhatsNext = () => {
             Here I build side projects, ship tiny products, and capture lessons that will shape my next epic. This is where I explore how AI transforms the way we think, build, and lead—accelerating my leadership for what&apos;s coming next.
           </p>
         </div>
+      </div>
 
-        <div className="text-center mt-16">
-          <div className="inline-block p-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 animate-fade-in">
-            <div className="text-6xl mb-4">🚧</div>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
-              Lab experiments coming soon...
-            </p>
+      {/* Experiment cards - outside the max-w-4xl container */}
+      <div className="mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 lg:px-12 max-w-6xl mx-auto">
+          {/* Experiment #1 - Nudgify */}
+          <a
+            href="/nudgify"
+            className="inline-block p-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-blue-400 dark:border-cyan-400 shadow-md hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-cyan-400 animate-fade-in cursor-pointer text-center"
+            style={{ textDecoration: 'none' }}
+          >
+            <div className="text-4xl mb-2">✨</div>
+            <div className="font-bold text-lg mb-1 text-blue-700 dark:text-cyan-400 whitespace-nowrap">Experiment #1</div>
+            <div className="text-gray-900 dark:text-white font-semibold mb-2">Nudgify</div>
+            <div className="text-gray-600 dark:text-gray-400 text-base">Work in progress. Click to see the marketing page.</div>
+          </a>
+          {/* Experiment #2 - Coming soon */}
+          <div className="inline-block p-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 animate-fade-in text-center">
+            <div className="text-4xl mb-2">🚧</div>
+            <div className="font-bold text-lg mb-1 text-gray-700 dark:text-gray-300 whitespace-nowrap">Experiment #2</div>
+            <div className="text-gray-900 dark:text-white font-semibold mb-2">Coming soon...</div>
+          </div>
+          {/* Experiment #3 - Coming soon */}
+          <div className="inline-block p-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 animate-fade-in text-center">
+            <div className="text-4xl mb-2">🚧</div>
+            <div className="font-bold text-lg mb-1 text-gray-700 dark:text-gray-300 whitespace-nowrap">Experiment #3</div>
+            <div className="text-gray-900 dark:text-white font-semibold mb-2">Coming soon...</div>
           </div>
         </div>
       </div>
