@@ -63,7 +63,7 @@ export default function HomePage() {
         }
     };
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
             <div className="flex flex-col md:flex-row min-h-screen">
                 {/* Left panel placeholder (fixed on desktop) */}
                 <aside className="w-full md:w-[288px] md:fixed md:inset-y-0 md:left-0 bg-transparent z-10 border-b md:border-b-0 border-gray-200 dark:border-gray-800">
@@ -89,7 +89,9 @@ export default function HomePage() {
                             </div>
                         </section>
                         <section id="whats-next" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12 min-h-screen md:min-h-[calc(100vh-64px)]">
-                            <WhatsNext />
+                            <div className="relative -mx-4 md:-mx-8 lg:-mx-[calc((100vw-288px-100%)/2)]">
+                                <WhatsNext />
+                            </div>
                         </section>
                         <section id="connect" className="pt-8 md:pt-12 scroll-mt-8 md:scroll-mt-12">
                             <Connect />

@@ -154,3 +154,96 @@ All colors MUST be HSL.
 .nav-underline[aria-current="page"]::after {
     transform: scaleX(1);
 }
+
+/* Nudgify scoped variables */
+.nudgify-root {
+    /* Brand Colors - Inspired by Notion/Headspace */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    --primary: 250 84% 54%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 252 86% 65%;
+    --primary-dark: 248 82% 45%;
+    --secondary: 270 50% 96%;
+    --secondary-foreground: 250 84% 54%;
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 142 76% 56%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 142 76% 70%;
+    --success: 142 76% 56%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 250 84% 54%;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 2px 10px -2px hsl(var(--foreground) / 0.1);
+    --shadow-button: 0 4px 14px -2px hsl(var(--primary) / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+.nudgify-root.dark {
+    --background: 220 26% 14%;
+    --foreground: 213 31% 91%;
+    --card: 220 26% 22%;
+    --card-foreground: 213 31% 91%;
+    --popover: 220 26% 22%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 250 84% 54%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 252 86% 65%;
+    --primary-dark: 248 82% 45%;
+    --secondary: 220 26% 18%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 220 26% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 142 76% 56%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 142 76% 70%;
+    --success: 142 76% 56%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 26% 18%;
+    --input: 220 26% 18%;
+    --ring: 250 84% 54%;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --shadow-soft: 0 4px 20px -4px hsl(var(--foreground) / 0.1);
+    --shadow-card: 0 2px 10px -2px hsl(var(--foreground) / 0.1);
+    --shadow-button: 0 4px 14px -2px hsl(var(--primary) / 0.3);
+    --sidebar-background: 220 26% 14%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 250 84% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 26% 18%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 220 26% 18%;
+    --sidebar-ring: 250 84% 54%;
+}
